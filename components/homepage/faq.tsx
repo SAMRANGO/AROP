@@ -23,7 +23,7 @@ export function FAQ() {
             <AccordionItem value="item-3">
                 <AccordionTrigger>Is my farm data secure?</AccordionTrigger>
                 <AccordionContent>
-                    Yes. We use industry-standard encryption and strict access controls to ensure your farm's data is protected and only accessible to authorized users.
+                    Yes. We use industry-standard encryption and strict access controls to ensure your farm&apos;s data is protected and only accessible to authorized users.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
