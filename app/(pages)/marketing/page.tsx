@@ -6,21 +6,21 @@ import { VideoPlayer } from "@/components/video-player";
 import CustomLink from "@/components/custom-link";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(""),
-  keywords: [""],
+  metadataBase: new URL('https://arop.vercel.app/'), 
+  keywords: ["Agricultural Resource Optimization", "Farm Management", "AgTech"], // Add relevant keywords
   title: "Marketing page",
   openGraph: {
     description: "Put description of the page.",
-    images: [""],
+    images: ["/path/to/your/image.jpg"], // Add actual image path
   },
   twitter: {
     card: "summary_large_image",
     title: "Marketing page",
     description: "Put description of the page.",
-    siteId: "",
+    siteId: "your-twitter-site-id", // Add your Twitter site ID
     creator: "Sam Mmari",
-    creatorId: "",
-    images: [""],
+    creatorId: "your-twitter-creator-id", // Add your Twitter creator ID
+    images: ["/path/to/your/image.jpg"], // Add actual image path
   },
 };
 
