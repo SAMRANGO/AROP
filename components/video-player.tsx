@@ -46,6 +46,8 @@ export const VideoPlayer: React.FC<CustomVideoPlayerProps> = ({ videoSrc }) => {
   }, [autoplay]);
 
   useEffect(() => {
+    const player = playerRef.current; // capture ref at effect start
+
     const handleMouseMove = () => {
       setLastMouseMoveTime(Date.now());
       setShowControls(true);
@@ -64,21 +66,21 @@ export const VideoPlayer: React.FC<CustomVideoPlayerProps> = ({ videoSrc }) => {
       }
     };
 
-    if (playerRef.current) {
-      playerRef.current.addEventListener("mousemove", handleMouseMove);
-      playerRef.current.addEventListener("mouseleave", handleMouseLeave);
+    if (player) {
+      player.addEventListener("mousemove", handleMouseMove);
+      player.addEventListener("mouseleave", handleMouseLeave);
     }
 
     const inactivityInterval = setInterval(checkMouseInactivity, 1000);
 
     return () => {
-      if (playerRef.current) {
-        playerRef.current.removeEventListener("mousemove", handleMouseMove);
-        playerRef.current.removeEventListener("mouseleave", handleMouseLeave);
+      if (player) {
+        player.removeEventListener("mousemove", handleMouseMove);
+        player.removeEventListener("mouseleave", handleMouseLeave);
       }
       clearInterval(inactivityInterval);
     };
-  }, [isFullscreen, lastMouseMoveTime]);
+  }, [isFullscreen, lastMouseMoveTime, isPlaying]); // add isPlaying to dependencies
 
   useEffect(() => {
     if (!isFullscreen) {
