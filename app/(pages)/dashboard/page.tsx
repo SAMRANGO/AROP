@@ -10,8 +10,23 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { Activity, Code, Star, TrendingUp, Users, Zap } from "lucide-react";
 import Link from "next/link";
+import { getAuthToken } from "@/lib/auth";
+import { fetchQuery } from "convex/nextjs";
+import { api } from "@/convex/_generated/api";
+import { redirect } from "next/navigation";
 
 export default async function Dashboard() {
+  const token = await getAuthToken();
+  const { hasActiveSubscription } = await fetchQuery(
+    api.subscriptions.getUserSubscriptionStatus,
+    {},
+    { token: token! }
+  );
+
+  if (!hasActiveSubscription) {
+    redirect("/pricing");
+  }
+
   return (
     <div className="flex flex-col gap-6 p-6">
       <div>

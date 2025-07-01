@@ -1,29 +1,15 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
-import { fetchQuery } from 'convex/nextjs';
 import { NextResponse } from 'next/server';
-import { api } from './convex/_generated/api';
 
 const isProtectedRoute = createRouteMatcher(['/dashboard(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
-
-  const token = (await (await auth()).getToken({ template: "convex" }))
-
-
-  const { hasActiveSubscription } = await fetchQuery(api.subscriptions.getUserSubscriptionStatus, {
-  }, {
-    token: token!,
-  });
-
   const isDashboard = req.nextUrl.href.includes(`/dashboard`)
 
-  if (isDashboard && !hasActiveSubscription) {
-    const pricingUrl = new URL('/pricing', req.nextUrl.origin)
-    // Redirect to the pricing page
-    return NextResponse.redirect(pricingUrl);
-  }
-
+  // You can only check authentication here, not subscription status
   if (isProtectedRoute(req)) await auth.protect()
+
+  // If you want to redirect users without a subscription, move that logic to a server-side API route or in the dashboard page itself
 })
 
 export const config = {
