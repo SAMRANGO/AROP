@@ -80,7 +80,7 @@
     "next-view-transitions": "^0.3.4",
     "react": "latest",
     "react-day-picker": "^8.10.1",
-    "react-dom": "latest",
+    "react-dom": "^19.1.0",
     "react-hook-form": "^7.51.3",
     "react-icons": "^4.11.0",
     "react-markdown": "^9.0.3",
