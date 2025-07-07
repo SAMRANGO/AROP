@@ -1,6 +1,5 @@
 "use client";
 
-import ModeToggle from "@/components/mode-toggle";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -33,7 +32,9 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
+
 import { Logo } from "@/components/ui/logo";
+import ThemeToggleButton from "@/components/ui/theme-toggle-button";
 
 interface Message {
   role: "user" | "assistant";
@@ -146,7 +147,7 @@ export default function PlaygroundPage() {
             </Badge>
           </div>
           <div className="flex items-center gap-2">
-            <ModeToggle />
+            <ThemeToggleButton />
             <Button
               size="sm"
               variant="outline"
