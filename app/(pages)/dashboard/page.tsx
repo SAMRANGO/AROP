@@ -10,6 +10,7 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { Activity, Code, Star, TrendingUp, Users, Zap } from "lucide-react";
 import Link from "next/link";
+import { FileUpload } from "./_components/file-upload";
 
 export default async function Dashboard() {
   return (
@@ -22,132 +23,17 @@ export default async function Dashboard() {
       </div>
 
       {/* Quick Stats Row */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">Total Projects</CardTitle>
-            <Code className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">12</div>
-            <p className="text-xs text-muted-foreground mt-1">
-              +2 from last month
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">Active Users</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">1,234</div>
-            <p className="text-xs text-muted-foreground mt-1">
-              +15% increase
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">Performance</CardTitle>
-            <Zap className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">98.2%</div>
-            <p className="text-xs text-muted-foreground mt-1">
-              +2.1% from average
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">Engagement</CardTitle>
-            <Activity className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">89%</div>
-            <p className="text-xs text-muted-foreground mt-1">
-              +5% this week
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Featured Section */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-        <Card className="lg:col-span-4">
-          <CardHeader>
-            <CardTitle>Project Growth</CardTitle>
-            <CardDescription>
-              Your project creation and completion rate
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="h-[200px] flex items-end gap-2">
-              {[40, 25, 45, 30, 60, 75, 65, 45, 50, 65, 70, 80].map((height, i) => (
-                <div
-                  key={i}
-                  className="bg-primary/10 hover:bg-primary/20 rounded-md w-full transition-colors"
-                  style={{ height: `${height}%` }}
-                />
-              ))}
-            </div>
-            <div className="flex justify-between mt-2 text-xs text-muted-foreground">
-              <span>Jan</span>
-              <span>Feb</span>
-              <span>Mar</span>
-              <span>Apr</span>
-              <span>May</span>
-              <span>Jun</span>
-              <span>Jul</span>
-              <span>Aug</span>
-              <span>Sep</span>
-              <span>Oct</span>
-              <span>Nov</span>
-              <span>Dec</span>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="lg:col-span-3">
-          <CardHeader>
-            <CardTitle>Recent Achievements</CardTitle>
-            <CardDescription>
-              Latest milestones reached
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/10 p-2 rounded-full">
-                  <Star className="h-4 w-4 text-primary" />
-                </div>
-                <div className="flex-1 space-y-1">
-                  <p className="text-sm font-medium">First 1000 Users</p>
-                  <Progress value={100} />
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/10 p-2 rounded-full">
-                  <TrendingUp className="h-4 w-4 text-primary" />
-                </div>
-                <div className="flex-1 space-y-1">
-                  <p className="text-sm font-medium">50 Projects Created</p>
-                  <Progress value={75} />
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/10 p-2 rounded-full">
-                  <Zap className="h-4 w-4 text-primary" />
-                </div>
-                <div className="flex-1 space-y-1">
-                  <p className="text-sm font-medium">Premium Features</p>
-                  <Progress value={45} />
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+      <div className="max-w-xl mx-auto">
+        <FileUpload
+          maxFiles={5}
+          maxSize={10 * 1024 * 1024} // 10MB
+          accept={{
+            "image/*": [".jpeg", ".jpg", ".png", ".gif", ".webp"],
+            "application/pdf": [".pdf"],
+            "application/msword": [".doc", ".docx"],
+            "text/plain": [".txt"],
+          }}
+        />
       </div>
 
       {/* Quick Actions */}
