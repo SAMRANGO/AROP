@@ -1,10 +1,10 @@
 "use client"
 
-import ModeToggle from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogClose } from '@/components/ui/dialog'
 import { Separator } from '@/components/ui/separator'
 import { SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import ThemeToggleButton from '@/components/ui/theme-toggle-button'
 import { UserProfile } from '@/components/user-profile'
 import { api } from '@/convex/_generated/api'
 import { HamburgerMenuIcon } from '@radix-ui/react-icons'
@@ -79,7 +79,7 @@ export default function DashboardTopNav({ children }: { children: ReactNode }) {
         <div className="flex justify-center items-center gap-2 ml-auto">
           <Button variant={"outline"} onClick={handleManageSubscription}>Manage Subscription</Button>
           {<UserProfile />}
-          <ModeToggle />
+          <ThemeToggleButton />
         </div>
       </header>
       {children}

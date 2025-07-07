@@ -1,5 +1,5 @@
 import Provider from "@/app/provider";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
@@ -48,11 +48,10 @@ export default function RootLayout({
         <body className={GeistSans.className}>
           <Provider>
             <ThemeProvider
-              attribute="class"
-              defaultTheme="dark"
-              enableSystem
-              disableTransitionOnChange
-            >
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+          >
               {children}
               <Toaster />
             </ThemeProvider>

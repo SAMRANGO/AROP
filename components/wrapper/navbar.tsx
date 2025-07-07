@@ -14,7 +14,6 @@ import { motion } from "framer-motion";
 import { Github, Menu, Sparkles, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
-import ModeToggle from "../mode-toggle";
 import { Button } from "../ui/button";
 import {
   SheetContent,
@@ -24,6 +23,7 @@ import {
 } from "../ui/sheet";
 import { UserProfile } from "../user-profile";
 import { Logo } from "../ui/logo";
+import ThemeToggleButton from "../ui/theme-toggle-button";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -197,7 +197,7 @@ export default function NavBar() {
 
         {/* Right Side */}
         <div className="flex items-center gap-2">
-          <ModeToggle />
+          <ThemeToggleButton />
           {!userId && (
             <Link href="/sign-in" prefetch={true}>
               <Button
