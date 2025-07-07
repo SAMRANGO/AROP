@@ -32,8 +32,7 @@ export function FileUpload({
   maxFiles = 5,
   maxSize = 5 * 1024 * 1024, // 5MB
   accept = {
-    "image/*": [".jpeg", ".jpg", ".png", ".gif"],
-    "application/pdf": [".pdf"],
+    "image/*": [".jpeg", ".jpg", ".png", ".webp"],
   },
   className,
   disabled = false,
@@ -159,18 +158,11 @@ export function FileUpload({
 
       {!aiResult && (
         <>
-          <Textarea
-            placeholder="Enter your prompt here"
-            rows={10}
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-          />
-
           <Card className={cn("w-full", className)}>
             <CardHeader>
-              <CardTitle>File Upload</CardTitle>
+              <CardTitle>Upload Plant Image</CardTitle>
               <CardDescription>
-                Drag and drop files here or click to select files
+                Take a clear photo of the affected plant part for best results
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -270,7 +262,7 @@ export function FileUpload({
           </Card>
 
           <Button onClick={onSubmit} disabled={isLoading}>
-            {isLoading ? <Loader2 className="size-4 animate-spin" /> : "Submit"}
+            {isLoading ? <Loader2 className="size-4 animate-spin" /> : "Analyze with AI"}
           </Button>
         </>
       )}

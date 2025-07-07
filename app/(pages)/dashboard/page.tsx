@@ -14,12 +14,9 @@ export default async function Dashboard() {
       <div className="max-w-xl mx-auto">
         <FileUpload
           maxFiles={5}
-          maxSize={10 * 1024 * 1024} // 10MB
+          maxSize={5 * 1024 * 1024} // 10MB
           accept={{
-            "image/*": [".jpeg", ".jpg", ".png", ".gif", ".webp"],
-            "application/pdf": [".pdf"],
-            "application/msword": [".doc", ".docx"],
-            "text/plain": [".txt"],
+            "image/*": [".jpg", ".png", ".webp"],
           }}
         />
       </div>
