@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import "./globals.css";
+import { ConsentManagerProvider, CookieBanner, ConsentManagerDialog } from "@c15t/nextjs";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nextstarter.xyz/"),
@@ -43,22 +44,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider dynamic>
-      <html lang="en" suppressHydrationWarning>
-        <body className={GeistSans.className}>
-          <Provider>
-            <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-          >
-              {children}
-              <Toaster />
-            </ThemeProvider>
-          </Provider>
-          <Analytics />
-        </body>
-      </html>
-    </ClerkProvider>
-  );
+        <ClerkProvider dynamic>
+          <html lang="en" suppressHydrationWarning>
+            <body className={GeistSans.className}>
+    		<ConsentManagerProvider options={{
+    					mode: 'c15t',
+    					backendURL: '/api/c15t',
+    					consentCategories: ['necessary', 'marketing'], // Optional: Specify which consent categories to show in the banner. 
+    					ignoreGeoLocation: true, // Useful for development to always view the banner.
+    				}}>
+    			<CookieBanner />
+    			<ConsentManagerDialog />
+    			
+              <Provider>
+                <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+              >
+                  {children}
+                  <Toaster />
+                </ThemeProvider>
+              </Provider>
+              <Analytics />
+            
+    		</ConsentManagerProvider>
+    	</body>
+          </html>
+        </ClerkProvider>
+      )
 }
