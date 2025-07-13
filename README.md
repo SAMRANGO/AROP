@@ -45,15 +45,21 @@ bun install
 ```
 
 3. Set up environment variables:
-```bash
-cp .env.example .env.local
-```
 
-4. Configure your environment variables:
+Create a `.env.local` file in the project root with the following content (replace values as needed):
+
 ```env
-# Authentication (Clerk)
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+
+# Deployment used by `npx convex dev`
+CONVEX_DEPLOYMENT=your_convex_deployment
+NEXT_PUBLIC_CONVEX_URL=your_convex_url
+
+POLAR_ACCESS_TOKEN=your_polar_access_token
+OPENAI_API_KEY=your_openai_api_key
+DEEPSEEK_API_KEY=your_deepseek_api_key
+GOOGLE_GENERATIVE_AI_API_KEY=your_google_generative_ai_api_key
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
