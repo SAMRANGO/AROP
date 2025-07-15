@@ -79,7 +79,7 @@ const PricingHeader = ({ title, subtitle }: PricingHeaderProps) => (
     <div className="mx-auto w-fit rounded-full border border-orange-200 dark:border-orange-900 bg-orange-50 dark:bg-orange-900/30 px-4 py-1 mb-6">
       <div className="flex items-center gap-2 text-sm font-medium text-orange-900 dark:text-orange-200">
         <DollarSign className="h-4 w-4" />
-        <span>Pricing</span>
+        <span>Bei</span>
       </div>
     </div>
 
@@ -97,10 +97,10 @@ const PricingSwitch = ({ onSwitch }: PricingSwitchProps) => (
     <Tabs defaultValue="0" className="w-[400px]" onValueChange={onSwitch}>
       <TabsList className="w-full">
         <TabsTrigger value="0" className="w-full">
-          Monthly
+          Kila Mwezi
         </TabsTrigger>
         <TabsTrigger value="1" className="w-full">
-          Yearly
+          Kila Mwaka
         </TabsTrigger>
       </TabsList>
     </Tabs>

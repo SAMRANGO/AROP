@@ -29,19 +29,19 @@ export default async function MarketingPage() {
     <PageWrapper>
       <div className="flex flex-col min-h-screen items-center mt-[2.5rem] p-3 w-full">
         <h1 className="scroll-m-20 max-w-[600px] text-5xl font-bold tracking-tight text-center">
-          Example Marketing Page with Video & CTA
+          Mfano wa Ukurasa wa Masoko na Video & CTA
         </h1>
         <p className="mx-auto max-w-[600px] text-gray-500 md:text-lg text-center mt-2 dark:text-gray-400">
-          Use this static page to have an explainer video with CTA and some
-          copy. Great for marketing your product and getting sales.
+          Tumia ukurasa huu tuli kuwa na video ya maelezo na CTA na nakala. 
+          Nzuri kwa kuuza bidhaa yako na kupata mauzo.
         </p>
         <div className="flex gap-2 mt-2">
           <Link href="/dashboard" prefetch={true} className="mt-2">
-            <Button size="lg">Get Started</Button>
+            <Button size="lg">Anza Sasa</Button>
           </Link>
           <Link href="/dashboard" prefetch={true} className="mt-2">
             <Button size="lg" variant="outline">
-              Get Started
+              Anza Sasa
             </Button>
           </Link>
         </div>

@@ -34,18 +34,18 @@ export default async function PricingPage() {
             <div className="mx-auto w-fit rounded-full border border-orange-200 dark:border-orange-900 bg-orange-50 dark:bg-orange-900/30 px-4 py-1 mb-6">
               <div className="flex items-center gap-2 text-sm font-medium text-orange-900 dark:text-orange-200">
                 <DollarSign className="h-4 w-4" />
-                <span>Flexible, Transparent Pricing</span>
+                <span>Bei Rahisi na Wazi</span>
               </div>
             </div>
 
             {/* Main heading */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 dark:from-orange-300 dark:via-orange-400 dark:to-orange-300 animate-gradient-x pb-2">
-              Empower Your Farm with Smart Resource Optimization
+              Imarisha Shamba Lako na Usimamizi Bora wa Rasilimali
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Unlock higher yields, lower costs, and sustainable growth with our AI-driven agricultural platform. Choose the plan that fits your operation and start optimizing today.
+              Pata mavuno zaidi, punguza gharama, na ukuaji endelevu na jukwaa letu la kilimo linalotumia AI. Chagua mpango unaoendana na shughuli zako na uanze kuboresha leo.
             </p>
           </div>
         </section>
@@ -54,10 +54,10 @@ export default async function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 dark:from-orange-300 dark:via-orange-400 dark:to-orange-300">
-                Optimize Every Acre
+                Boresha Kila Ekari
               </h2>
               <p className="text-gray-600 dark:text-gray-400">
-                Our platform delivers the tools you need to maximize productivity, minimize waste, and make data-driven decisions for your farm. Streamline operations and boost efficiency with advanced analytics and automation.
+                Jukwaa letu linatoa zana unazohitaji kuongeza uzalishaji, kupunguza upotevu, na kufanya maamuzi yanayotokana na data kwa shamba lako. Rahisisha shughuli na ongeza ufanisi kwa uchambuzi wa hali ya juu na automation.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -10,20 +10,20 @@ import { motion } from "motion/react"
 
 const faqs = [
     {
-        question: "What is the Agricultural Resource Optimization Platform?",
-        answer: "It is an AI-powered solution designed to help farmers and agribusinesses maximize yields, minimize waste, and efficiently manage resources such as water, energy, and labor."
+        question: "Jukwaa la Uboreshaji wa Rasilimali za Kilimo ni nini?",
+        answer: "Ni suluhisho linalotumia AI lililotengenezwa kusaidia wakulima na biashara za kilimo kuongeza mavuno, kupunguza upotevu, na kusimamia rasilimali kama vile maji, nishati, na nguvu kazi kwa ufanisi."
     },
     {
-        question: "How does the platform help optimize resources?",
-        answer: "The platform provides real-time monitoring, predictive analytics, and smart recommendations for irrigation, fertilization, and equipment usage, ensuring optimal allocation of resources and reducing operational costs."
+        question: "Je, jukwaa hili husaidia vipi kuboresha rasilimali?",
+        answer: "Jukwaa hutoa ufuatiliaji wa moja kwa moja, uchambuzi wa utabiri, na mapendekezo mahiri ya umwagiliaji, urutubishi, na matumizi ya vifaa, kuhakikisha ugawaji bora wa rasilimali na kupunguza gharama za uendeshaji."
     },
     {
-        question: "Is my farm data secure?",
-        answer: "Yes. We use industry-standard encryption and strict access controls to ensure your farm's data is protected and only accessible to authorized users."
+        question: "Je, data ya shamba langu iko salama?",
+        answer: "Ndiyo. Tunatumia usimbaji fiche wa kiwango cha viwanda na udhibiti mkali wa ufikiaji kuhakikisha data ya shamba lako inalindwa na inafikiwa tu na watumiaji walioidhinishwa."
     },
     {
-        question: "Can the platform integrate with my existing farm equipment?",
-        answer: "Absolutely. Our platform supports integration with a wide range of sensors, IoT devices, and farm management systems for seamless data collection and automation."
+        question: "Je, jukwaa linaweza kuunganishwa na vifaa vyangu vya shamba vilivyopo?",
+        answer: "Kabisa. Jukwaa letu linaunga mkono ushirikiano na aina mbalimbali za sensors, vifaa vya IoT, na mifumo ya usimamizi wa mashamba kwa ukusanyaji wa data na automation bila kikwazo."
     }
 ]
 
@@ -42,10 +42,10 @@ export function AccordionComponent() {
                     </div>
 
                     <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 dark:from-orange-300 dark:via-orange-400 dark:to-orange-300 pb-2">
-                        Frequently Asked Questions
+                        Maswali Yanayoulizwa Mara kwa Mara
                     </h2>
                     <p className="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
-                        Everything you need to know about our Agricultural Resource Optimization Platform. Can&apos;t find the answer you&apos;re looking for? Reach out to our team.
+                        Kila kitu unachohitaji kujua kuhusu Jukwaa letu la Uboreshaji wa Rasilimali za Kilimo. Je, hujapata jibu unalotafuta? Wasiliana na timu yetu.
                     </p>
                 </div>
 

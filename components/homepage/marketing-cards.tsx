@@ -35,10 +35,10 @@ export default function Features() {
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
                 <div className="relative z-10 mx-auto max-w-2xl space-y-6 text-center">
                     <h2 className="text-balance text-2xl font-semibold lg:text-4xl">
-                        Why Choose Us?
+                        Kwa Nini Utuchague?
                     </h2>
                     <p>
-                        Our platform empowers farmers and agribusinesses to maximize yields, minimize waste, and make data-driven decisions for sustainable agriculture.
+                        Jukwaa letu linawezesha wakulima na biashara za kilimo kuongeza mavuno, kupunguza upotevu, na kufanya maamuzi yanayotokana na data kwa kilimo endelevu.
                     </p>
                 </div>
 
@@ -52,44 +52,44 @@ export default function Features() {
                             <AccordionTrigger>
                                 <div className="flex items-center gap-2 text-base">
                                     <Wheat className="size-4" />
-                                    Crop Data Visualization
+                                    Uonyeshaji wa Data ya Mazao
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent>
-                                Visualize and analyze crop performance, soil health, and resource allocation to optimize every acre.
+                                Ona na chambua utendaji wa mazao, afya ya udongo, na mgawanyo wa rasilimali ili kuboresha kila ekari.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
                             <AccordionTrigger>
                                 <div className="flex items-center gap-2 text-base">
                                     <Droplets className="size-4" />
-                                    Smart Resource Allocation
+                                    Ugawaji Rasilimali wa Kisasa
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent>
-                                AI-powered recommendations for efficient use of water, fertilizers, and energy, reducing costs and environmental impact.
+                                Mapendekezo yanayoendeshwa na AI kwa matumizi bora ya maji, mbolea, na nishati, kupunguza gharama na athari za mazingira.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-3">
                             <AccordionTrigger>
                                 <div className="flex items-center gap-2 text-base">
                                     <Tractor className="size-4" />
-                                    Farm Identity Management
+                                    Usimamizi wa Utambulisho wa Shamba
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent>
-                                Securely manage farm profiles, equipment, and personnel for streamlined operations and compliance.
+                                Simamia kwa usalama wasifu wa mashamba, vifaa, na wafanyakazi kwa uendeshaji na uzingatiaji unaofaa.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-4">
                             <AccordionTrigger>
                                 <div className="flex items-center gap-2 text-base">
                                     <BarChart3 className="size-4" />
-                                    Yield & Efficiency Analytics
+                                    Uchambuzi wa Mavuno na Ufanisi
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent>
-                                Monitor yields, forecast trends, and benchmark efficiency to drive continuous improvement across your agricultural operations.
+                                Fuatilia mavuno, tabiri mienendo, na pima ufanisi ili kuendesha uboreshaji endelevu katika shughuli zako za kilimo.
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>

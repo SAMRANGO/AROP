@@ -86,17 +86,17 @@ export const Map = () => {
       </div>
 
       <div className="pt-12 text-base font-semibold tracking-tight text-orange-400 sm:pt-20 sm:text-lg">
-        Resource Optimization
+        Uboreshaji wa Rasilimali
       </div>
       <h2
         id="management-title"
         className="mt-6 max-w-[700px] text-center text-2xl font-semibold tracking-tight text-balance text-white md:text-5xl"
       >
-        Smart Monitoring & Control for Efficient Agriculture
+        Ufuatiliaji na Udhibiti wa Busara kwa Kilimo Bora
       </h2>
       <p className="mt-4 max-w-2xl text-center text-base text-balance text-gray-400 sm:mt-8 sm:text-xl">
-        Unlock the full potential of your farm with real-time insights and intelligent automation. 
-        Optimize water, energy, and labor resources across fields, irrigation, and logistics for sustainable, high-yield operations.
+        Fungua uwezo kamili wa shamba lako kwa ufahamu wa moja kwa moja na utendaji kazi wa kiotomatiki. 
+        Boresha rasilimali za maji, nishati, na nguvu kazi katika mashamba, umwagiliaji, na usafirishaji kwa uzalishaji endelevu wa mavuno mengi.
       </p>
 
       <div className="relative mt-20 mb-10 ml-[17rem] scale-90 sm:mb-16 md:mt-24 md:ml-0 md:scale-100">
@@ -105,7 +105,7 @@ export const Map = () => {
           <div className="relative flex items-center justify-center">
             <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
             <div className="absolute -top-4 -right-[3.7rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
-              Water Usage
+              Matumizi ya Maji
             </div>
             <RiPlaneLine className="relative size-5 rotate-90 text-blue-400" />
             <div
@@ -120,7 +120,7 @@ export const Map = () => {
           <div className="relative flex items-center justify-center">
             <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
             <div className="absolute -top-4 -right-[3.7rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
-              Energy Monitoring
+              Ufuatiliaji wa Nishati
             </div>
             <Icons.QuadCopter className="relative size-5 rotate-90 text-yellow-400" />
             <div
@@ -135,7 +135,7 @@ export const Map = () => {
           <div className="relative flex items-center justify-center">
             <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
             <div className="absolute -top-4 -right-[3.7rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
-              Crop Health
+              Afya ya Mazao
             </div>
             <RiPlaneLine className="relative size-5 rotate-90 text-green-400" />
             <div
@@ -156,7 +156,7 @@ export const Map = () => {
           <div className="relative flex items-center justify-center">
             <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
             <div className="absolute -top-4 -right-7 flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
-              Logistics
+              Usafirishaji
             </div>
             <RiTruckFill className="relative size-5 text-purple-400" />
           </div>
