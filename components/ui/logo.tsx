@@ -4,7 +4,7 @@ import Image from 'next/image'
 export const Logo = ({ className }: { className?: string }) => {
     return (
         <Image
-            src="/CS_Flower_12.png"
+            src="/leaf.png"
             alt="Logo"
             width={25}
             height={25}
