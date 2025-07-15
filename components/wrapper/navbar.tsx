@@ -116,7 +116,7 @@ export default function NavBar() {
                     </Button>
                   </Link>
                   <Link
-                    href="https://youtube.com/@rasmickyy"
+                    href=""
                     target="_blank"
                     prefetch={true}
                   >
