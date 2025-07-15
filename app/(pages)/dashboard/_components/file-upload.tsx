@@ -262,7 +262,7 @@ export function FileUpload({
           </Card>
 
           <Button onClick={onSubmit} disabled={isLoading}>
-            {isLoading ? <Loader2 className="size-4 animate-spin" /> : "Analyze with AI"}
+            {isLoading ? <Loader2 className="size-4 animate-spin" /> : "Changanua kwa AI"}
           </Button>
         </>
       )}
