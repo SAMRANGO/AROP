@@ -19,16 +19,16 @@ export default function SettingsPage() {
     <div className="flex flex-col gap-6 p-6">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-semibold tracking-tight">Settings</h1>
-        <p className="text-muted-foreground mt-2">Manage your account settings and preferences</p>
+        <h1 className="text-3xl font-semibold tracking-tight">Mipangilio</h1>
+        <p className="text-muted-foreground mt-2">Dhibiti mipangilio na mapendeleo ya akaunti yako</p>
       </div>
 
       <Tabs defaultValue="account" className="space-y-6">
         <TabsList>
-          <TabsTrigger value="account">Account</TabsTrigger>
-          <TabsTrigger value="notifications">Notifications</TabsTrigger>
-          <TabsTrigger value="appearance">Appearance</TabsTrigger>
-          <TabsTrigger value="security">Security</TabsTrigger>
+          <TabsTrigger value="account">Akaunti</TabsTrigger>
+          <TabsTrigger value="notifications">Arifa</TabsTrigger>
+          <TabsTrigger value="appearance">Muonekano</TabsTrigger>
+          <TabsTrigger value="security">Usalama</TabsTrigger>
         </TabsList>
 
         <TabsContent value="account">
@@ -36,77 +36,77 @@ export default function SettingsPage() {
             {/* Profile Settings */}
             <Card>
               <CardHeader>
-                <CardTitle>Profile</CardTitle>
-                <CardDescription>Update your personal information</CardDescription>
+                <CardTitle>Wasifu</CardTitle>
+                <CardDescription>Sasisha taarifa zako binafsi</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-center gap-6">
                   <Avatar className="h-20 w-20">
-                    <AvatarImage src="/avatars/user.jpg" alt="User" />
+                    <AvatarImage src="/avatars/user.jpg" alt="Mtumiaji" />
                     <AvatarFallback>UN</AvatarFallback>
                   </Avatar>
-                  <Button variant="outline">Change Avatar</Button>
+                  <Button variant="outline">Badilisha Picha</Button>
                 </div>
                 <Separator />
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Your name" defaultValue={user?.user?.firstName ? user?.user?.firstName : ""} />
+                    <Label htmlFor="name">Jina</Label>
+                    <Input id="name" placeholder="Jina lako" defaultValue={user?.user?.firstName ? user?.user?.firstName : ""} />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="Your email" defaultValue={user?.user?.emailAddresses?.[0]?.emailAddress!} />
+                    <Label htmlFor="email">Barua pepe</Label>
+                    <Input id="email" type="email" placeholder="Barua pepe yako" defaultValue={user?.user?.emailAddresses?.[0]?.emailAddress!} />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="username">Username</Label>
-                    <Input id="username" placeholder="Username" defaultValue={user?.user?.username!} />
+                    <Label htmlFor="username">Jina la mtumiaji</Label>
+                    <Input id="username" placeholder="Jina la mtumiaji" defaultValue={user?.user?.username!} />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="bio">Bio</Label>
-                  <Textarea id="bio" placeholder="Tell us about yourself" />
+                  <Label htmlFor="bio">Wasifu</Label>
+                  <Textarea id="bio" placeholder="Tuambie kuhusu wewe" />
                 </div>
-                <Button>Save Changes</Button>
+                <Button>Hifadhi Mabadiliko</Button>
               </CardContent>
             </Card>
 
             {/* Preferences */}
             <Card>
               <CardHeader>
-                <CardTitle>Preferences</CardTitle>
-                <CardDescription>Manage your account preferences</CardDescription>
+                <CardTitle>Mapendeleo</CardTitle>
+                <CardDescription>Dhibiti mapendeleo ya akaunti yako</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <Label>Language</Label>
-                    <p className="text-sm text-muted-foreground">Select your preferred language</p>
+                    <Label>Lugha</Label>
+                    <p className="text-sm text-muted-foreground">Chagua lugha unayopendelea</p>
                   </div>
                   <Select defaultValue="en">
                     <SelectTrigger className="w-[180px]">
-                      <SelectValue placeholder="Select language" />
+                      <SelectValue placeholder="Chagua lugha" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="en">English</SelectItem>
-                      <SelectItem value="fr">French</SelectItem>
-                      <SelectItem value="de">German</SelectItem>
-                      <SelectItem value="es">Spanish</SelectItem>
+                      <SelectItem value="en">Kiingereza</SelectItem>
+                      <SelectItem value="fr">Kifaransa</SelectItem>
+                      <SelectItem value="de">Kijerumani</SelectItem>
+                      <SelectItem value="es">Kihispania</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <Label>Timezone</Label>
-                    <p className="text-sm text-muted-foreground">Set your local timezone</p>
+                    <Label>Majira</Label>
+                    <p className="text-sm text-muted-foreground">Weka majira yako ya eneo</p>
                   </div>
                   <Select defaultValue="est">
                     <SelectTrigger className="w-[180px]">
-                      <SelectValue placeholder="Select timezone" />
+                      <SelectValue placeholder="Chagua majira" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="pst">Pacific Time (PST)</SelectItem>
-                      <SelectItem value="est">Eastern Time (EST)</SelectItem>
+                      <SelectItem value="pst">Majira ya Pacific (PST)</SelectItem>
+                      <SelectItem value="est">Majira ya Mashariki (EST)</SelectItem>
                       <SelectItem value="utc">UTC</SelectItem>
                       <SelectItem value="gmt">GMT</SelectItem>
                     </SelectContent>
@@ -120,8 +120,8 @@ export default function SettingsPage() {
         <TabsContent value="notifications">
           <Card>
             <CardHeader>
-              <CardTitle>Notifications</CardTitle>
-              <CardDescription>Manage your notification preferences</CardDescription>
+              <CardTitle>Arifa</CardTitle>
+              <CardDescription>Dhibiti mapendeleo yako ya arifa</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="space-y-4">
@@ -129,8 +129,8 @@ export default function SettingsPage() {
                   <div className="flex items-center gap-4">
                     <Bell className="h-5 w-5 text-muted-foreground" />
                     <div>
-                      <Label>Push Notifications</Label>
-                      <p className="text-sm text-muted-foreground">Receive push notifications</p>
+                      <Label>Arifa za Papo kwa Papo</Label>
+                      <p className="text-sm text-muted-foreground">Pokea arifa za papo kwa papo</p>
                     </div>
                   </div>
                   <Switch />
@@ -140,8 +140,8 @@ export default function SettingsPage() {
                   <div className="flex items-center gap-4">
                     <Mail className="h-5 w-5 text-muted-foreground" />
                     <div>
-                      <Label>Email Notifications</Label>
-                      <p className="text-sm text-muted-foreground">Receive email updates</p>
+                      <Label>Arifa za Barua Pepe</Label>
+                      <p className="text-sm text-muted-foreground">Pokea taarifa kupitia barua pepe</p>
                     </div>
                   </div>
                   <Switch defaultChecked />
@@ -151,8 +151,8 @@ export default function SettingsPage() {
                   <div className="flex items-center gap-4">
                     <Globe className="h-5 w-5 text-muted-foreground" />
                     <div>
-                      <Label>Marketing Emails</Label>
-                      <p className="text-sm text-muted-foreground">Receive marketing emails</p>
+                      <Label>Barua Pepe za Masoko</Label>
+                      <p className="text-sm text-muted-foreground">Pokea barua pepe za masoko</p>
                     </div>
                   </div>
                   <Switch />
@@ -161,7 +161,6 @@ export default function SettingsPage() {
             </CardContent>
           </Card>
         </TabsContent>
-
         <TabsContent value="appearance">
           <Card>
             <CardHeader>

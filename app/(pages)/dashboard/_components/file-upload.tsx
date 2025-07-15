@@ -160,9 +160,9 @@ export function FileUpload({
         <>
           <Card className={cn("w-full", className)}>
             <CardHeader>
-              <CardTitle>Upload Plant Image</CardTitle>
+              <CardTitle>Pakia Picha ya Mmea</CardTitle>
               <CardDescription>
-                Take a clear photo of the affected plant part for best results
+                Piga picha wazi ya sehemu ya mmea iliyoathirika ili kupata matokeo bora
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -179,8 +179,8 @@ export function FileUpload({
                 <input {...getInputProps()} />
                 <UploadCloud className="h-10 w-10 text-muted-foreground mx-auto mb-4" />
                 <div className="text-sm text-muted-foreground">
-                  <span className="font-medium">Click to upload</span> or drag
-                  and drop
+                  <span className="font-medium">Bofya kupakia</span> au buruta
+                  na uache
                 </div>
                 <div className="text-xs text-muted-foreground mt-1">
                   {Object.keys(accept)
