@@ -13,7 +13,8 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { useChat } from "ai/react";
+import { useChat } from "@ai-sdk/react";
+import { DefaultChatTransport } from "ai";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowUp,
@@ -75,18 +76,33 @@ export default function PlaygroundPage() {
     setTimeout(() => setCopiedCode(null), 2000);
   };
 
-  const { messages, isLoading, input, handleInputChange, handleSubmit } =
+  const [input, setInput] = useState("");
+  const { messages, status, sendMessage } =
     useChat({
-      body: {
-        model,
-        temperature,
-        maxTokens,
-        topP,
-        frequencyPenalty,
-        presencePenalty,
-        systemPrompt,
-      },
+      transport: new DefaultChatTransport({
+        api: "/api/chat",
+        body: {
+          model,
+          temperature,
+          maxTokens,
+          topP,
+          frequencyPenalty,
+          presencePenalty,
+          systemPrompt,
+        },
+      }),
     });
+    
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInput(e.target.value);
+  };
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    sendMessage({ text: input });
+    setInput("");
+  };
     
 
   const components = {
@@ -183,7 +199,7 @@ export default function PlaygroundPage() {
                   }`}
                 >
                   <div className="flex flex-col gap-2 max-w-[480px]">
-                    {message.reasoning && (
+                    {message.parts?.some(part => 'reasoning' in part) && (
                       <div
                         className={`${
                           message.role === "user"
@@ -211,13 +227,13 @@ export default function PlaygroundPage() {
                         {expandedReasoning.includes(index) && (
                           <div className="px-3 pb-3 text-[12px] opacity-70">
                             <ReactMarkdown components={components}>
-                              {message.reasoning}
+                              {message.parts?.find(part => 'reasoning' in part)?.reasoning?.toString() || ''}
                             </ReactMarkdown>
                           </div>
                         )}
                       </div>
                     )}
-                    {message.content && (
+                    {message.parts?.some(part => part.type === 'text' && part.text) && (
                       <div
                         className={`${
                           message.role === "user"
@@ -231,7 +247,9 @@ export default function PlaygroundPage() {
                       >
                         <div className="text-[14px]">
                           <ReactMarkdown components={components}>
-                            {message.content}
+                            {message.role === "user" 
+                              ? (message as any).content || message.parts?.find(part => part.type === 'text')?.text || ''
+                              : message.parts?.find(part => part.type === 'text')?.text || ''}
                           </ReactMarkdown>
                         </div>
                       </div>
@@ -241,8 +259,8 @@ export default function PlaygroundPage() {
               ))}
             </AnimatePresence>
 
-            {/* Only show loading when isLoading is true AND there's no message being streamed */}
-            {isLoading &&
+            {/* Only show loading when status is true AND there's no message being streamed */}
+            {status &&
               messages[messages.length - 1]?.role !== "assistant" && (
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -282,7 +300,7 @@ export default function PlaygroundPage() {
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && !e.shiftKey) {
                     e.preventDefault();
-                    handleSubmit();
+                    handleSubmit(e as any);
                   }
                 }}
                 placeholder="Send a message..."
@@ -292,9 +310,10 @@ export default function PlaygroundPage() {
                 <Button
                   size="sm"
                   onClick={handleSubmit}
-                  disabled={isLoading || !input.trim()}
+                  disabled={status === "streaming" || status === "submitted" || !(input || '').trim()}
                   className="h-8 bg-white hover:bg-zinc-200 text-black"
                 >
+
                   <ArrowUp className="w-4 h-4" />
                 </Button>
               </div>

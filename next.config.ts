@@ -3,9 +3,6 @@ import type { NextConfig } from 'next';
 import createMDX from '@next/mdx';
 
 const nextConfig: NextConfig = {
-   eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     remotePatterns: [
       {
@@ -40,18 +37,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  experimental: {
-    reactCompiler: true,
-  },
+  reactCompiler: true,
   pageExtensions: ["ts", "tsx", "mdx"],
-    async rewrites() {
-    		return [
-    			{
-    				source: '/api/c15t/:path*',
-    				destination: `${process.env.NEXT_PUBLIC_C15T_URL}/:path*`,
-    			},
-    		];
-    	}
+  async rewrites() {
+    return [
+      {
+        source: '/api/c15t/:path*',
+        destination: process.env.NEXT_PUBLIC_C15T_URL ? `${process.env.NEXT_PUBLIC_C15T_URL}/:path*` : '/',
+      },
+    ];
+  }
 };
 
 const withMDX = createMDX({});
