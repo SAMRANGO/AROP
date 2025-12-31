@@ -7,13 +7,22 @@ const isProtectedRoute = createRouteMatcher(['/dashboard(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
 
-  const token = (await (await auth()).getToken({ template: "convex" }))
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Middleware: Connecting to Convex at', process.env.NEXT_PUBLIC_CONVEX_URL);
+  }
 
+  const token = (await (await auth()).getToken({ template: "convex" })) || undefined;
 
-  const { hasActiveSubscription } = await fetchQuery(api.subscriptions.getUserSubscriptionStatus, {
-  }, {
-    token: token!,
-  });
+  let hasActiveSubscription = false;
+  try {
+    const result = await fetchQuery(api.subscriptions.getUserSubscriptionStatus, {}, {
+      token,
+    });
+    hasActiveSubscription = result.hasActiveSubscription;
+  } catch (error) {
+    console.error("Middleware: Failed to fetch subscription status", error);
+    // Default to false or handle accordingly
+  }
 
   const isDashboard = req.nextUrl.href.includes(`/dashboard`)
 
