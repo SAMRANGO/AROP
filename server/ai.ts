@@ -10,7 +10,7 @@ export const getAiResult = async (
     const arrayBuffer = await file.arrayBuffer();
     const base64string = Buffer.from(arrayBuffer).toString('base64');
 
-    
+
 
     const result = await generateText({
         model: google('gemini-1.5-flash'),
@@ -25,7 +25,7 @@ export const getAiResult = async (
                     {
                         type: 'file',
                         data: base64string,
-                        mimeType: file.type,
+                        mediaType: file.type,
                     },
                 ],
             },

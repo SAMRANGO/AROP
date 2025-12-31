@@ -29,8 +29,8 @@ const createCheckout = async ({
         accessToken: process.env.POLAR_ACCESS_TOKEN,
     });
 
-    const result = await polar.checkouts.custom.create({
-        productPriceId: priceId,
+    const result = await polar.checkouts.create({
+        products: [priceId],
         successUrl,
         customerEmail,
         metadata
@@ -276,7 +276,7 @@ export const paymentWebhook = httpAction(async (ctx, request) => {
 
     try {
         const body = await request.json();
-        
+
 
         // track events and based on events store data
         await ctx.runMutation(api.subscriptions.subscriptionStoreWebhook, {
