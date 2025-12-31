@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/dashboard/',
     },
-    sitemap: 'https://nextstarter.xyz/sitemap.xml',
+    sitemap: 'https://arop.vercel.app/sitemap.xml',
   }
 }

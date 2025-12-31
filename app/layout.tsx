@@ -3,13 +3,14 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
-import { GeistSans } from "geist/font/sans";
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
-import { ConsentManagerProvider, CookieBanner, ConsentManagerDialog } from "@c15t/nextjs";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nextstarter.xyz/"),
+  metadataBase: new URL("https://arop.vercel.app/"),
   title: {
     default: 'AROP',
     template: `%s | AROP`
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     images: [
       "https://y7wjirhcap.ufs.sh/f/Z6H5NLvckVbTa5cGbhHVqklDuajgUhJ4XGn5rbSTKWQeBOLy",
     ],
-    url: "https://nextstarter.xyz/",
+    url: "https://arop.vercel.app/",
   },
   twitter: {
     card: "summary_large_image",
@@ -44,33 +45,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-        <ClerkProvider dynamic>
-          <html lang="en" suppressHydrationWarning>
-            <body className={GeistSans.className}>
-    		<ConsentManagerProvider options={{
-    					mode: 'c15t',
-    					backendURL: '/api/c15t',
-    					consentCategories: ['necessary', 'marketing'], // Optional: Specify which consent categories to show in the banner. 
-    					ignoreGeoLocation: true, // Useful for development to always view the banner.
-    				}}>
-    			<CookieBanner />
-    			<ConsentManagerDialog />
-    			
-              <Provider>
-                <ThemeProvider
-                attribute="class"
-                defaultTheme="system"
-                enableSystem
-              >
-                  {children}
-                  <Toaster />
-                </ThemeProvider>
-              </Provider>
-              <Analytics />
-            
-    		</ConsentManagerProvider>
-    	</body>
-          </html>
-        </ClerkProvider>
-      )
+    <ClerkProvider dynamic>
+      <html lang="en" suppressHydrationWarning>
+        <body className={inter.className}>
+          <Provider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+            >
+              {children}
+              <Toaster />
+            </ThemeProvider>
+          </Provider>
+          <Analytics />
+        </body>
+      </html>
+    </ClerkProvider>
+  )
 }
